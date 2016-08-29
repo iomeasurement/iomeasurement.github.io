@@ -1,3 +1,3 @@
 # iomeasurement.github.io
-![Organogram](/readme/download.svg "QA Organogram")
+![Organogram](https://iomeasurement.github.io/readme/download.svg "QA Organogram")
 
