@@ -1,0 +1,39 @@
+ushort calcChk(string data)
+
+{ ushort chk = 0; byte i; byte msb; byte lsb;
+
+for(i=0;i<data.Length;i++)
+
+{ chk += data[i];
+
+}
+
+chk ^= 0xFFFF;
+
+lsb = (byte)(chk);
+
+//bound i to printable ascii (33-126) lsb &= 0x5D;
+
+if(lsb<33) { lsb+=33;
+
+}
+
+chk &= 0xFF00;
+
+chk += lsb;
+
+msb = (byte)(chk >> 8);
+
+//bound i to printable ascii (33-126) msb &= 0x5D;
+
+if(msb<33)
+
+{ msb+=33; }
+
+chk &= 0x00FF;
+
+chk += (ushort)(msb << 8);
+
+return chk;
+
+}
